@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Weather App</h1>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Search</h2>
+      <form id="weather-search">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" placeholder="Enter city name" required>
+        <button type="submit">Search</button>
+      </form>
+      <br/>
+      <h2>Search History</h2>
+      <ul class="history">
+      </ul>
+    </aside>
+    <main class="maincont">
+      <div class="weather">
+        <h2 class="crtWeather">Current Weather</h2>
+        <p id="cityName"></p>
+        <p id="date"></p>
+        <p id="temp"></p>
+        <p id="humidity"></p>
+        <p id="windspeed"></p>
+        <p id="hello"></p>
+        <img id="icon">
+      </div>
+      <div class="fiveday">
+        <h2>5 Day Forecast</h2>
+      </div>
+    </main>
+  </div>
+
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
+      integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=="
+      crossorigin="anonymous"
+    ></script>
+  <script src="./assets/script.js"></script>
+</body>
+</html>
+
