@@ -6,7 +6,7 @@ Type in a city into the search bar and get the current weather data as well as t
 
 
 ## Executing program
-Website link:
+Website link: https://ayhaamb.github.io/weather-app/
 
 
 ## Photo of deployed website
