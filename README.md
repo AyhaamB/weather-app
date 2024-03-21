@@ -10,7 +10,8 @@ Website link: https://ayhaamb.github.io/weather-app/
 
 
 ## Photo of deployed website
-![My Image](./images/Launched%20Screenshot.png)
+![My Image](./images/weather-app-home-ss.png)
+![My Image](./images/weather-app-ss.png)
 
 
 ## Help
