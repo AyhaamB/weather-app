@@ -29,8 +29,10 @@ function getSrchHistory(cityName) {
 // function to show search history
 function showSrchHistory() {
   srchHistory.innerHTML = "";
-  // cycle through each item in the history storage
-  for (const item of historyStorage) {
+  // Reverse the order of historyStorage to display the most recent history at the top
+  const reversedHistory = historyStorage.slice().reverse();
+  // cycle through each item in the reversed history storage
+  for (const item of reversedHistory) {
     // creates a list elements for each search history item and adds an even listener to it, once clicked it will run the same function as the search button
     let listItem = document.createElement("li");
     listItem.textContent = item;
@@ -65,6 +67,7 @@ function showSrchHistory() {
     });
   }
 }
+
 
 // adding an event listener to the weather search element that will trigger once submitted
 weatherSearch.addEventListener("submit", function (event) {
