@@ -118,7 +118,7 @@ function displayCurrentWeather(data) {
   )} °F`;
   document.getElementById("humidity").textContent = `${data.main.humidity} %`;
   document.getElementById("windspeed").textContent = `${data.wind.speed} MPH`;
-  document.getElementById("weather-type").textContent = `${data.weather[0].main}`;
+  document.getElementById("weather-type").textContent = `${data.weather[0].description}`;
   document.getElementById(
     "icon"
   ).src = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
