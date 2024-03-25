@@ -112,10 +112,8 @@ function displayCurrentWeather(data) {
   ).textContent = `${data.name}, ${data.sys.country}`;
   document.getElementById("date").textContent = `${dayjs
     .unix(data.dt)
-    .format("ddd MM/DD/YYYY")}`;
-  document.getElementById("temp").textContent = `${Math.round(
-    data.main.temp
-  )} °F`;
+    .format("ddd MMM DD")}`;
+  document.getElementById("temp").textContent = `${Math.round(((data.main.temp - 32) * 5) / 9)} °C`;
   document.getElementById("humidity").textContent = `${data.main.humidity} %`;
   document.getElementById("windspeed").textContent = `${data.wind.speed} MPH`;
   document.getElementById("weather-type").textContent = `${data.weather[0].description}`;
@@ -134,6 +132,7 @@ function fetchForecastData(lat, lon) {
       return res.json();
     })
     .then(function (data) {
+      console.log(data, 'yo')
       displayForecastData(data);
     });
 }
@@ -148,14 +147,16 @@ function displayForecastData(data) {
     // creating elements that will hold the various data that will populate within each days forecast
     let day = document.createElement("div");
     let date = document.createElement("h4");
-    date.textContent = dayjs.unix(data.list[i].dt).format("ddd MM/DD/YYYY");
+    date.textContent = dayjs.unix(data.list[i].dt).format("ddd MMM DD");
     let temp = document.createElement("p");
     let humidity = document.createElement("p");
     let windspeed = document.createElement("p");
     let icon = document.createElement("img");
     day.append(icon, date, temp, humidity, windspeed);
     fiveday.append(day);
-    temp.textContent = `Temp: ${Math.round(data.list[i].main.temp)} °F`;
+    // temp.textContent = `${Math.round(data.list[i].main.temp)} °F`;
+    temp.textContent = `${Math.round(((data.list[i].main.temp - 32) * 5) / 9)} °C`;
+
     humidity.textContent = `Humidity: ${data.list[i].main.humidity} %`;
     windspeed.textContent = `Wind: ${data.list[i].wind.speed} MPH`;
     icon.src = `https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png`;

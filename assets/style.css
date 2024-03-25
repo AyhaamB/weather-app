@@ -4,6 +4,17 @@
   color: #f2f2f2;
 }
 
+@keyframes slideTop {
+  from {
+    opacity: 0;
+    transform: translateY(29vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -35,6 +46,10 @@
 
 .slideLeft {
   animation: slideLeftAnimation 0.75s forwards ease-out;
+}
+
+.slide-top {
+  animation: slideTop 0.75s forwards ease-out;
 }
 
 .end {
@@ -122,7 +137,7 @@ header {
   display: flex;
   justify-content: center;
   margin: 0;
-  margin: 5vh 0vw 0vh 0vw;
+  margin: 3vh 0vw 0vh 0vw;
 }
 
 .history-header {
