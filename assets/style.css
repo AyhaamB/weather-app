@@ -129,9 +129,14 @@ header {
 
 .history {
   overflow-x: hidden;
+  overflow-y: auto;
   list-style: none;
   padding: 0;
   color: #2e2e2e;
+}
+
+.history::-webkit-scrollbar {
+  width: 0;
 }
 
 .history-header-container {
