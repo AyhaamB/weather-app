@@ -119,7 +119,7 @@ header {
 }
 
 .history-container {
-  overflow-x: scroll;
+  overflow-x: hidden;
   max-height: 60vh;
   margin: 0vh 0vw 0vh 0vw;
   display: flex;
@@ -128,6 +128,7 @@ header {
 }
 
 .history {
+  overflow-x: hidden;
   list-style: none;
   padding: 0;
   color: #2e2e2e;
